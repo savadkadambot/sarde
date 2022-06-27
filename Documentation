@@ -1,0 +1,151 @@
+1. Login supervisor    : http://renr.in/index.php/API/Login/check_login
+   Parameters: email, password
+
+2.  Logout supervisor : http://renr.in/index.php/API/Login/logout	
+	Parameters: access_token
+
+3.  Add Expenses by supervisor : http://renr.in/index.php/API/Expense/add_expense
+	Parameters: access_token , job_id , expense , amount , reference
+
+4. List all expenses in supervisors table : http://renr.in/index.php/API/Expense/list_all_expenses
+   Parameters:  access_token , job_id , page_offset , page_count
+
+5. Add Tools by supervisor : http://renr.in/index.php/API/Tools/add_tools
+	Parameters: access_token, job_id, item, quantity, condition
+
+6.  List all tools in supervisors table : http://renr.in/index.php/API/Tools/list_all_tools
+	Parameters: access_token ,  job_id , page_offset , page_count
+	{
+    "result": [
+        {
+            "item": "ei_screw",
+            "quantity": "45",
+            "condition": "good"
+        },
+        {
+            "item": "ei_Stud",
+            "quantity": "450",
+            "condition": "good"
+        },
+        {
+            "item": "2",
+            "quantity": "2",
+            "condition": "goood"
+        }
+    ],
+    "status": "success"
+  }
+
+
+7. Message to Supervisors:  http://renr.in/index.php/API/Messages/get_messages
+    Parameters : access_token
+    {
+    "messages": [
+        {
+            "id": "1",
+            "visibility": "1",
+            "supervisor_id": "0",
+            "message_title": "Test Title 1",
+            "message_description": "Test Title 1 Desc",
+            "created_date": "2022-06-11 16:34:43"
+        }
+    ],
+    "status": "success"
+    }
+
+8. Labours list under job id:  http://renr.in/index.php/API/Labours/admin_assigned_labours
+    Parameters: access_token , job_id
+    {
+    "result": [
+        {
+            "id": "14",
+            "job_id": "8",
+            "name": "Akash",
+            "trade": "Painter",
+            "mobile": "986465454",
+            "created_date": "2022-06-11 09:16:46.000000"
+        },
+        {
+            "id": "15",
+            "job_id": "8",
+            "name": "Anand",
+            "trade": "Painter",
+            "mobile": "986465400",
+            "created_date": "2022-06-11 09:20:27.000000"
+        },
+        {
+            "id": "18",
+            "job_id": "8",
+            "name": "Ashok",
+            "trade": "Painter",
+            "mobile": "9865454545",
+            "created_date": "2022-06-11 09:33:19.000000"
+        }
+    ],
+    "status": "success"
+    }
+
+9.    http://renr.in/index.php/API/Labours/add_labours_work
+        Parameters: access_token , job_id , name , trade , type , hours
+
+10.    http://renr.in/index.php/API/Labours/labours_list
+        Parameters: access_token , job_id 
+        
+        {
+    "result": [
+        {
+            "id": "10",
+            "user_id": "30",
+            "job_id": "8",
+            "name": "hali",
+            "trade": "Painter",
+            "type": "sub",
+            "hours": "10"
+        },
+        {
+            "id": "11",
+            "user_id": "30",
+            "job_id": "8",
+            "name": "hasii",
+            "trade": "Painter",
+            "type": "sub",
+            "hours": "10"
+        },
+        {
+            "id": "14",
+            "user_id": "30",
+            "job_id": "8",
+            "name": "Hameed\n",
+            "trade": "Painter",
+            "type": "sub",
+            "hours": "10"
+        },
+        {
+            "id": "15",
+            "user_id": "30",
+            "job_id": "8",
+            "name": "Raju",
+            "trade": "Painter",
+            "type": "sub",
+            "hours": "8"
+        }
+    ],
+    "status": "success"
+}
+
+
+15.  Work Progress/Board_fixing/add item:   http://renr.in/index.php/API/Work_progress/Board_fixing/add_item
+     Parameters: access_token , job_id , no , length , width , meter_sqr
+
+         
+16.   Work Progress/Board_fixing/list all item:  http://renr.in/index.php/API/Work_progress/Board_fixing/list_all_item
+    Parameters: access_token, job_id, page_offset, page_count
+
+
+21.  Inventory/Board_fixing/add item:   http://renr.in/index.php/API/Inventory/Board_fixing/add_item
+     Parameters: access_token , job_id , item , quantity
+
+         
+22.   Inventory/Board_fixing/list all item:  http://renr.in/index.php/API/Inventory/Board_fixing/list_all_item
+    Parameters: access_token, job_id, page_offset, page_count
+   
