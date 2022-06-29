@@ -17,8 +17,9 @@ class Labours extends CI_Controller {
 		$this->load->model('Labours_model'); 
 
          $data['get_labours_details']=$this->Labours_model->getLaboursDetails();
-        
-			$this->load->view('labours/labours_list',$data);		
+        	$this->load->view('common/header');
+			$this->load->view('labours/labours_list',$data);
+			$this->load->view('common/footer');		
 	}
 
 

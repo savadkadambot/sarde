@@ -210,19 +210,19 @@
 
                     <div class="form-group">
                       <label for="">Name</label>
-                      <input type="text" class="form-control" id="" name="name" placeholder="Name" value="<?php echo $labours_details_from_id['name']; ?>">
+                      <input type="text" class="form-control" id="" name="name" placeholder="" value="<?php echo $supervisor_details_from_id['name']; ?>">
                     </div>
-                     <div class="form-group">
-                      <label for="">Mobile</label>
-                      <input type="number" class="form-control" id="" name="mobile" placeholder="Mobile" value="<?php echo $labours_details_from_id['mobile']; ?>">
+                    <div class="form-group">
+                      <label for="">Email</label>
+                      <input type="text" class="form-control" id="" name="email" placeholder="" value="<?php echo $supervisor_details_from_id['email']; ?>">
                     </div>
                     <div class="form-group">
                       <label for="">Password</label>
-                      <input type="text" class="form-control" id="" name="password" placeholder="" value="<?php echo $labours_details_from_id['password']; ?>">
+                      <input type="text" class="form-control" id="" name="password" placeholder="" value="<?php echo $supervisor_details_from_id['password']; ?>">
                     </div>
-                    <div class="form-group">
+                     <div class="form-group">
                       <label for="">Mobile</label>
-                      <input type="text" class="form-control" id="" name="mobile" placeholder="" value="<?php echo $labours_details_from_id['mobile']; ?>">
+                      <input type="text" class="form-control" id="" name="mobile" placeholder="" value="<?php echo $supervisor_details_from_id['mobile']; ?>">
                     </div>
        
     <button type="submit" class="btn btn-primary mr-2">Submit</button>

@@ -222,7 +222,7 @@
                     
                     <div class="form-group">
                       <label>Mobile</label>
-                      <input type="number" class="form-control" name="mobile" placeholder="Mobile Number" required="" value="<?php echo $mobile; ?>">
+                      <input type="text" class="form-control" name="mobile" placeholder="Mobile Number" required="" value="<?php echo $mobile; ?>">
                     </div>
                     
                     <!-- <div class="form-group">
@@ -235,14 +235,14 @@
                 </select>
               </div> -->
 
-               <div class="form-group">
+               <!-- <div class="form-group">
                     <label for="exampleFormControlSelect1">Status</label>
                     <select class="form-control form-control" name="status" required="">
                       <option>Select Status</option>
                       <option <?php if($active_status == 1){ echo "selected"; } ?> value="1">Active</option>
                       <option <?php if($active_status == 0){ echo "selected"; } ?> value="0">Inactive</option> 
                     </select>
-                  </div>
+                  </div> -->
 
                    
                     <button type="submit" class="btn btn-primary mr-2">Submit</button>

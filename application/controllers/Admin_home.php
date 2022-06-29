@@ -22,7 +22,9 @@ class Admin_home extends CI_Controller {
 
 		$this->load->model('Messaging_model');
 		$data['messages_list'] = $this->Messaging_model->getRecentMessagingDetails();
-		$this->load->view('admin_home/dashboard',$data);	
+		$this->load->view('common/header',$data);
+		$this->load->view('admin_home/dashboard',$data);
+		$this->load->view('common/footer',$data);	
 	}
 
 

@@ -276,7 +276,7 @@
                               </i>
                               Edit
                           </a>
-                           <a class="btn btn-danger btn-sm" href="<?php echo base_url(); ?>index.php/Supervisors/delete_supervisors/<?php echo $row['id']; ?>">
+                           <a class="btn btn-danger btn-sm" onclick="deleteList(<?php echo $row['id']; ?>)">
                               <i class="fas fa-trash">
                               </i>
                               Delete
@@ -316,6 +316,14 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
+  <script type="text/javascript">
+    function deleteList(id){
+      var conf = confirm("Do you want to delete? There is no undo?");
+      if(conf){
+        window.location.href = '<?php echo base_url(); ?>index.php/Supervisors/delete_supervisors/'+id
+      }
+    }
+  </script>
   <script src="<?php echo base_url(); ?>newtheme/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->

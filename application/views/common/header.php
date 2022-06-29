@@ -1,4 +1,4 @@
-<?php echo base_url(); ?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,19 +19,8 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>newtheme/css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
+  <link rel="shortcut icon" href="<?php echo base_url(); ?>newtheme/images/favicon.png" />
 </head>
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  display: inline;
-}
-</style>
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
@@ -40,7 +29,8 @@ li {
         <!-- <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="images/logo.svg" class="mr-2" alt="logo"/></a>
         <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a> -->
         <!--<h2>SarDe</h2>-->
-          <img src="<?php echo base_url(); ?>/newtheme/images/aklogo.png" alt="logo" style="width: 40px;"/>
+                <img src="<?php echo base_url(); ?>/newtheme/images/aklogo.png" alt="logo" style="width: 40px;"/>
+
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <!--<button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">-->
@@ -108,8 +98,7 @@ li {
             </div>
           </li>
           <li class="nav-item nav-profile dropdown">
-
-        <a class="dropdown-item" href="<?php echo base_url(); ?>index.php/Admin_login/logout">
+             <a class="dropdown-item" href="<?php echo base_url(); ?>index.php/Admin_login/logout">
                 <i class="ti-power-off text-primary"></i>
                 Logout
               </a>
@@ -145,7 +134,9 @@ li {
       
       <!-- partial -->
       <!-- partial:../../partials/_sidebar.html -->
-         <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        
+
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav" style="overflow: visible;">
 
         
@@ -199,8 +190,16 @@ li {
             </a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="" href="<?php echo base_url(); ?>index.php/Sub_jobs" aria-expanded="false" aria-controls="tables">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title"> Sub Jobs</span>
+              <!-- <i class="menu-arrow"></i> -->
+            </a>
+          </li>
+
            <li class="nav-item">
-            <a class="nav-link" data-toggle="" href="" aria-expanded="false" aria-controls="tables">
+            <a class="nav-link" data-toggle="" href="<?php echo base_url(); ?>index.php/Messaging/list" aria-expanded="false" aria-controls="tables">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Messaging</span>
               <!-- <i class="menu-arrow"></i> -->
@@ -208,166 +207,3 @@ li {
           </li>
         </ul>
       </nav>
-      <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h2>Jobs</h2>
-                  <!-- <p class="card-description">
-                    Add class <code>.table</code>
-                  </p> -->
-                  <ul>
-    <div class="row">
-        <div class="col-12">
-          <a style="margin-left:3px" class="btn btn-success float-right" href="<?php echo base_url(); ?>index.php/Jobs/create_job">Create New Job</a>
-          <a style="margin-left:3px" class="btn btn-info float-right" href="<?php echo base_url(); ?>index.php/Jobs/index/pending_jobs">Pending Jobs</a>
-          <a style="margin-left:3px" class="btn btn-info float-right" href="<?php echo base_url(); ?>index.php/Jobs/index/ongoing_jobs">Ongoing Jobs</a>
-          <a style="margin-left:3px" class="btn btn-info float-right" href="<?php echo base_url(); ?>index.php/Jobs/index/old_jobs">Old Jobs</a>
-          <a style="margin-left:3px" class="btn btn-info float-right" href="<?php echo base_url(); ?>index.php/Jobs">All Jobs</a>
-
-          
-
-
-
-        </div>
-      </div>
-
-
-
-     </ul>
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead>
-                  <tr>
-                      <th style="width: 1%">
-                          Job Id
-                      </th>
-                      <th style="width: 20%">
-                          Job Title
-                      </th>
-                       <th style="width: 20%">
-                          Start Date
-                      </th>
-                       <th style="width: 20%">
-                          Finish Date
-                      </th>
-                      <th style="width: 20%">
-                          Created Date
-                      </th>
-                     
-                      <!-- <th style="width: 8%" class="text-center">
-                          Status
-                      </th> -->
-                      <th style="width: 20%">
-                      </th>
-                  </tr>
-              </thead>
-              <tbody>
-                <?php  
-         foreach ($jobs_list as $row)  
-         {  
-            ?>
-                  <tr>
-                      <td>
-                          <?php echo $row['id']; ?>
-                      </td>
-                      <td>
-                        <?php echo $row['job_title']; ?>
-                      </td>
-                       <td>
-                        <?php echo $row['start_date']; ?>
-                      </td>
-                       <td>
-                        <?php echo $row['finish_date']; ?>
-                      </td>
-                      <td>
-                         <?php echo $row['created_date']; ?>
-                      </td>
-                     
-                    <!-- 
-                      <td class="project-state">
-                          <span class="badge badge-success">Active</span>
-                      </td> -->
-                      <td class="project-actions text-right">
-                          <!-- <a class="btn btn-primary btn-sm" href="<?php echo base_url(); ?>index.php/Jobs/create_sub_job/<?php echo $row['id']; ?>">
-                              <i class="fas fa-folder">
-                              </i>
-                              Create Sub Jobs
-                          </a> -->
-                          <a class="btn btn-primary btn-sm" href="<?php echo base_url(); ?>index.php/Jobs/view_job_details/<?php echo $row['id']; ?>">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a>
-                         <!--  <a class="btn btn-info btn-sm" href="<?php echo base_url(); ?>index.php/Labours/edit_labours/<?php echo $row['id']; ?>">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          -->
-
-                          <button onclick="deleteJob(<?php echo $row['id']; ?>)" class="btn btn-danger btn-sm">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </button>
-                      </td>
-                  </tr>
-
-                <?php 
-              }
-               ?>
- 
-              </tbody>
-                      
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-           
-            
-            
-           
-        <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. <a href="https://www.bootstrapdash.com/" target="_blank">InstaDesign</a>. All rights reserved.</span>
-            
-          </div>
-        </footer>
-        <!-- partial -->
-      </div>
-      <!-- main-panel ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
-  <script src="<?php echo base_url(); ?>newtheme/vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
-  <script src="<?php echo base_url(); ?>newtheme/js/off-canvas.js"></script>
-  <script src="<?php echo base_url(); ?>newtheme/js/hoverable-collapse.js"></script>
-  <script src="<?php echo base_url(); ?>newtheme/js/template.js"></script>
-  <script src="<?php echo base_url(); ?>newtheme/js/settings.js"></script>
-  <script src="<?php echo base_url(); ?>newtheme/js/todolist.js"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <!-- End custom js for this page-->
-</body>
-
-<script>
-    function deleteJob(id){
-      var status = confirm("Do you want to delete job. There is no undo?")
-      if(status){
-        window.location='<?php echo base_url();?>index.php/Jobs/deleteJob/'+id;
-      }
-    }
-  </script>

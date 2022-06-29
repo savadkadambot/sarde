@@ -52,6 +52,15 @@ class Messaging extends CI_Controller {
 
 	}
 
+		public function delete_message($id){
+			if(!isset($_SESSION['super_admin_logged_data'])){
+				$redirect_url = base_url();
+				redirect($redirect_url, 'refresh');
+			}
+			$this->db->where('id', $id);
+	    	$delete = $this->db-> delete('messagetosupervisor');
+			redirect('Messaging/list');
+		}
 
 }
 

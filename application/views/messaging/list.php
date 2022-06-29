@@ -260,6 +260,15 @@
                               
                           </small> -->
                       </td>
+
+                      <td class="project-actions text-right">
+                           <a class="btn btn-danger btn-sm" onclick="deleteList(<?php echo $row['id']; ?>)">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
+                         
+                      </td>
                       
                     
                   </tr>
@@ -295,6 +304,14 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
+  <script type="text/javascript">
+    function deleteList(id){
+      var conf = confirm("Do you want to delete? There is no undo?");
+      if(conf){
+        window.location.href = '<?php echo base_url(); ?>index.php/Messaging/delete_message/'+id
+      }
+    }
+  </script>
   <script src="<?php echo base_url(); ?>newtheme/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->

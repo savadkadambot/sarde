@@ -31,9 +31,9 @@ class Jobs extends CI_Controller {
 			$data['job_description'] = $_POST['job_description'];
 			$data['start_date'] = $_POST['start_date'];
 			$data['finish_date'] = $_POST['finish_date'];
-			$data['road_marking_sqm'] = $_POST['road_marking_sqm'];
-			$data['stud_fixing_nos'] = $_POST['stud_fixing_nos'];
-			$data['board_fixing_nos'] = $_POST['board_fixing_nos'];
+			// $data['road_marking_sqm'] = $_POST['road_marking_sqm'];
+			// $data['stud_fixing_nos'] = $_POST['stud_fixing_nos'];
+			// $data['board_fixing_nos'] = $_POST['board_fixing_nos'];
 
 			$this->load->model('Jobs_model');
 			$add_jobs = $this->Jobs_model->addJobs($data);

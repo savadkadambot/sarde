@@ -172,6 +172,7 @@ class Supervisors extends CI_Controller {
 		 public function edit_supervisor($id){
 
 		$this->load->model('Supervisors_model');
+
 		if($_POST){
 
 			$update_id = $_POST['update_id'];
@@ -182,7 +183,6 @@ class Supervisors extends CI_Controller {
 			$post_data['mobile'] = $_POST['mobile'];
 			//$post_data['status'] = $_POST['status'];
 
-			
 			$update_details = $this->Supervisors_model->updateSupervisor($update_id,$post_data);
 			if($update_details){
 				// echo "ssss";
@@ -190,7 +190,8 @@ class Supervisors extends CI_Controller {
 				redirect('Supervisors/index');
 			}
 		}
-		$data['supervisor_details_from_id'] = $this->Supevisors_model->getSupervisorDetailsFromId($id);
+
+		$data['supervisor_details_from_id'] = $this->Supervisors_model->getSupervisorDetailsFromId($id);
 		// $data['list_careers'] = $this->Career_model->listCareers();
 
 				$this->load->view('supervisors/edit_supervisor',$data);

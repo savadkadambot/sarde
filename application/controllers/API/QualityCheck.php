@@ -41,6 +41,7 @@ class QualityCheck extends CI_Controller {
 
         $job_id = $_POST['job_id'];
         $subjob_id = $_POST['subjob_id'];
+        $location = $_POST['location'];
         $thickness = $_POST['thickness'];
         $edge_alignment = $_POST['edge_alignment'];
         $comment = $_POST['comment'];
@@ -49,7 +50,7 @@ class QualityCheck extends CI_Controller {
 
         $this->load->model('API/QualityCheck_model','QUALITY_CHECK_MODEL');
 
-        $add_quality_check = $this->QUALITY_CHECK_MODEL->addQualityCheck($user_id, $file_name, $job_id, $subjob_id, $thickness, $edge_alignment, $comment);
+        $add_quality_check = $this->QUALITY_CHECK_MODEL->addQualityCheck($user_id, $file_name, $job_id, $subjob_id, $location, $thickness, $edge_alignment, $comment);
         if($add_quality_check){
         	$response = array();
 			$response['result'] = 'quality_check_added_successfully';

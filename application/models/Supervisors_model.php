@@ -132,7 +132,7 @@
 
 
         public function getSupervisorDetailsFromId($id){
-
+          
 
             $sql = "SELECT * FROM `supervisors_details` WHERE `id`= $id LIMIT 1";
           $query= $this->db->query($sql);
