@@ -19,9 +19,9 @@ class Jobs extends CI_Controller {
 		$this->load->model('Jobs_model'); 
 
         $data['jobs_list']=$this->Jobs_model->getJobsDetails($job_id='',$status);
-
+        $this->load->view('common/header');
 		$this->load->view('jobs/jobs_list',$data);
-
+		$this->load->view('common/footer');
 	}
 
 	public function create_job(){
@@ -42,7 +42,9 @@ class Jobs extends CI_Controller {
     			redirect(base_url().'index.php/Jobs');
     		}
 		}
+		$this->load->view('common/header');
 		$this->load->view('jobs/create_job');
+		$this->load->view('common/footer');
 
 	}
 
@@ -93,7 +95,9 @@ class Jobs extends CI_Controller {
 		$data['get_added_comments'] = $this->Jobs_model->getAddedComments($job_id);
 		$data['tools'] = $this->Jobs_model->getTools($job_id);
 		$data['expenses'] = $this->Jobs_model->getExpenses($job_id);
-		$data['labours'] = $this->Jobs_model->getLabours($job_id);
+		$data['labours_worked'] = $this->Jobs_model->getLabours($job_id);
+		// print_r($data);
+		// die();
 		$data['work_progress'] = $this->Jobs_model->getWorkProgress($job_id);
 		$data['inventory'] = $this->Jobs_model->getInventory($job_id);
 		$data['quality_check'] = $this->Jobs_model->getQualityCheck($job_id);
@@ -110,8 +114,9 @@ class Jobs extends CI_Controller {
 		$this->load->model('Jobs_model');
 		$data['labours'] = $this->Jobs_model->getLaboursUnderJobid($job_id);
 
-
+		$this->load->view('common/header');
 		$this->load->view('jobs/view_job_details',$data);
+		$this->load->view('common/footer');
 
 	}
 

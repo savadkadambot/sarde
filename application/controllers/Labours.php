@@ -53,9 +53,9 @@ class Labours extends CI_Controller {
 		  $this->load->model('Jobs_model'); 
 
         $data['jobs_list']=$this->Jobs_model->getJobsDetails();      
-
+        $this->load->view('common/header');
 		$this->load->view('labours/add_labours',$data);
-
+		$this->load->view('common/footer');
 			}
 
 		public function edit_labours($id){
@@ -81,9 +81,9 @@ class Labours extends CI_Controller {
 		}
 		$data['labours_details_from_id'] = $this->Labours_model->getLaboursDetailsFromId($id);
 		// $data['list_careers'] = $this->Career_model->listCareers();
-
+				$this->load->view('common/header');
 				$this->load->view('labours/edit_labours',$data);
-
+				$this->load->view('common/footer');
 		// $this->load->view('labours/edit_labours',$data);
 		}
 

@@ -16,7 +16,9 @@ class Messaging extends CI_Controller {
 		$this->load->model('Messaging_model'); 
 
          $data['get_messages']=$this->Messaging_model->listMessages();
-		$this->load->view('messaging/list',$data);		
+         $this->load->view('common/header');
+		$this->load->view('messaging/list',$data);
+		$this->load->view('common/footer');		
 	}
 
 
@@ -48,7 +50,9 @@ class Messaging extends CI_Controller {
 				redirect('Messaging/list');			 
 				}
 		}
+		$this->load->view('common/header');
 		$this->load->view('messaging/send_message',$data);
+		$this->load->view('common/footer');
 
 	}
 

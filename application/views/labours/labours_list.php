@@ -116,7 +116,13 @@
             </div>
            
             
-            
+             <script type="text/javascript">
+    function deleteList(id){
+      var conf = confirm("Do you want to delete? There is no undo?");
+      if(conf){
+        window.location.href = '<?php echo base_url(); ?>index.php/Labours/delete_labours/'+id
+      }
+    }
+  </script>
            
-        <!-- content-wrapper ends -->
         

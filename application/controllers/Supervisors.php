@@ -20,8 +20,9 @@ class Supervisors extends CI_Controller {
 
 		$this->load->model('Supervisors_model'); 
 		$data['get_supervisors_details']=$this->Supervisors_model->getSupervisorsDetails();
-
-		$this->load->view('supervisors/supervisors_list',$data);			
+		$this->load->view('common/header');
+		$this->load->view('supervisors/supervisors_list',$data);
+		$this->load->view('common/footer');			
 	}
 
 	public function add_supervisors(){
@@ -65,7 +66,10 @@ class Supervisors extends CI_Controller {
 					}
 		 		}
 		  }
+		  $this->load->view('common/header');
 			$this->load->view('supervisors/add_supervisors',$data);
+			$this->load->view('common/footer');
+
 		}
 
 		public function delete_supervisors($id){
@@ -193,8 +197,10 @@ class Supervisors extends CI_Controller {
 
 		$data['supervisor_details_from_id'] = $this->Supervisors_model->getSupervisorDetailsFromId($id);
 		// $data['list_careers'] = $this->Career_model->listCareers();
-
+				$this->load->view('common/header');
 				$this->load->view('supervisors/edit_supervisor',$data);
+				$this->load->view('common/footer');
+
 
 		// $this->load->view('labours/edit_labours',$data);
 		}
